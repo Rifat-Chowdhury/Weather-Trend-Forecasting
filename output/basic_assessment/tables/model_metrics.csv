@@ -1,0 +1,5 @@
+target,model,mae,rmse,mape
+avg_temperature_celsius,linear_regression_with_lags,0.3631,0.6104,1.7255
+avg_temperature_celsius,naive_last_value_baseline,0.316,0.6587,1.4977
+avg_precip_mm,linear_regression_with_lags,0.0013,0.0016,11.4344
+avg_precip_mm,naive_last_value_baseline,0.0015,0.0019,12.9631

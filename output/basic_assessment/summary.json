@@ -1,0 +1,326 @@
+{
+  "dataset": {
+    "path": "GlobalWeatherRepository.csv",
+    "row_count": 161379,
+    "column_count": 41,
+    "date_range": {
+      "start": "2024-05-16",
+      "end": "2026-08-25",
+      "total_days": 831
+    }
+  },
+  "preprocessing": {
+    "missing_values_detected": {},
+    "missing_value_strategy": "No blank fields were present; no imputation was required.",
+    "outlier_strategy": "Applied IQR clipping across numeric columns before analysis.",
+    "outlier_counts_top_10": [
+      [
+        "visibility_km",
+        33635
+      ],
+      [
+        "visibility_miles",
+        33438
+      ],
+      [
+        "precip_mm",
+        32188
+      ],
+      [
+        "precip_in",
+        24313
+      ],
+      [
+        "air_quality_Sulphur_dioxide",
+        22461
+      ],
+      [
+        "air_quality_PM10",
+        17210
+      ],
+      [
+        "air_quality_Nitrogen_dioxide",
+        16636
+      ],
+      [
+        "air_quality_Carbon_Monoxide",
+        14126
+      ],
+      [
+        "air_quality_gb-defra-index",
+        14108
+      ],
+      [
+        "air_quality_PM2.5",
+        13605
+      ]
+    ],
+    "normalization_strategy": "Applied min-max normalization to time-series model features on the training split."
+  },
+  "eda": {
+    "top_weather_conditions": [
+      [
+        "Sunny",
+        47616
+      ],
+      [
+        "Partly cloudy",
+        42871
+      ],
+      [
+        "Patchy rain nearby",
+        14472
+      ],
+      [
+        "Partly Cloudy",
+        11026
+      ],
+      [
+        "Clear",
+        8948
+      ],
+      [
+        "Overcast",
+        8579
+      ],
+      [
+        "Mist",
+        6505
+      ],
+      [
+        "Light rain",
+        4758
+      ],
+      [
+        "Light rain shower",
+        4003
+      ],
+      [
+        "Cloudy",
+        2150
+      ]
+    ],
+    "hottest_countries": [
+      [
+        "Saudi Arabien",
+        45.0
+      ],
+      [
+        "Marrocos",
+        40.3
+      ],
+      [
+        "Turkm\u00e9nistan",
+        37.8
+      ],
+      [
+        "\u0422\u0443\u0440\u0446\u0438\u044f",
+        34.0
+      ],
+      [
+        "Qatar",
+        32.82
+      ],
+      [
+        "United Arab Emirates",
+        32.52
+      ],
+      [
+        "Cambodia",
+        32.11
+      ],
+      [
+        "Oman",
+        31.91
+      ],
+      [
+        "Djibouti",
+        31.48
+      ],
+      [
+        "Kuwait",
+        31.32
+      ]
+    ],
+    "coolest_countries": [
+      [
+        "Iceland",
+        5.98
+      ],
+      [
+        "Canada",
+        8.43
+      ],
+      [
+        "Norway",
+        8.9
+      ],
+      [
+        "United States of America",
+        9.3
+      ],
+      [
+        "Andorra",
+        9.54
+      ],
+      [
+        "Mongolia",
+        9.73
+      ],
+      [
+        "Finland",
+        10.23
+      ],
+      [
+        "Estonia",
+        10.28
+      ],
+      [
+        "Ecuador",
+        10.4
+      ],
+      [
+        "Liechtenstein",
+        10.56
+      ]
+    ],
+    "correlations": {
+      "temperature_celsius": {
+        "temperature_celsius": 1.0,
+        "precip_mm": 0.0473,
+        "humidity": -0.3466,
+        "cloud": -0.1228,
+        "wind_kph": 0.1436,
+        "pressure_mb": -0.4513,
+        "uv_index": 0.4883,
+        "air_quality_PM2.5": 0.0956
+      },
+      "precip_mm": {
+        "temperature_celsius": 0.0473,
+        "precip_mm": 1.0,
+        "humidity": 0.341,
+        "cloud": 0.5035,
+        "wind_kph": 0.0743,
+        "pressure_mb": -0.2032,
+        "uv_index": -0.0842,
+        "air_quality_PM2.5": -0.2017
+      },
+      "humidity": {
+        "temperature_celsius": -0.3466,
+        "precip_mm": 0.341,
+        "humidity": 1.0,
+        "cloud": 0.5022,
+        "wind_kph": -0.1061,
+        "pressure_mb": 0.0192,
+        "uv_index": -0.542,
+        "air_quality_PM2.5": -0.285
+      },
+      "cloud": {
+        "temperature_celsius": -0.1228,
+        "precip_mm": 0.5035,
+        "humidity": 0.5022,
+        "cloud": 1.0,
+        "wind_kph": 0.0418,
+        "pressure_mb": -0.1067,
+        "uv_index": -0.1814,
+        "air_quality_PM2.5": -0.2352
+      },
+      "wind_kph": {
+        "temperature_celsius": 0.1436,
+        "precip_mm": 0.0743,
+        "humidity": -0.1061,
+        "cloud": 0.0418,
+        "wind_kph": 1.0,
+        "pressure_mb": -0.1729,
+        "uv_index": 0.0799,
+        "air_quality_PM2.5": -0.0935
+      },
+      "pressure_mb": {
+        "temperature_celsius": -0.4513,
+        "precip_mm": -0.2032,
+        "humidity": 0.0192,
+        "cloud": -0.1067,
+        "wind_kph": -0.1729,
+        "pressure_mb": 1.0,
+        "uv_index": -0.1151,
+        "air_quality_PM2.5": 0.0178
+      },
+      "uv_index": {
+        "temperature_celsius": 0.4883,
+        "precip_mm": -0.0842,
+        "humidity": -0.542,
+        "cloud": -0.1814,
+        "wind_kph": 0.0799,
+        "pressure_mb": -0.1151,
+        "uv_index": 1.0,
+        "air_quality_PM2.5": 0.1116
+      },
+      "air_quality_PM2.5": {
+        "temperature_celsius": 0.0956,
+        "precip_mm": -0.2017,
+        "humidity": -0.285,
+        "cloud": -0.2352,
+        "wind_kph": -0.0935,
+        "pressure_mb": 0.0178,
+        "uv_index": 0.1116,
+        "air_quality_PM2.5": 1.0
+      }
+    }
+  },
+  "forecasting": {
+    "targets": [
+      "avg_temperature_celsius",
+      "avg_precip_mm"
+    ],
+    "evaluation_metrics": [
+      {
+        "target": "avg_temperature_celsius",
+        "model": "linear_regression_with_lags",
+        "mae": 0.3631,
+        "rmse": 0.6104,
+        "mape": 1.7255
+      },
+      {
+        "target": "avg_temperature_celsius",
+        "model": "naive_last_value_baseline",
+        "mae": 0.316,
+        "rmse": 0.6587,
+        "mape": 1.4977
+      },
+      {
+        "target": "avg_precip_mm",
+        "model": "linear_regression_with_lags",
+        "mae": 0.0013,
+        "rmse": 0.0016,
+        "mape": 11.4344
+      },
+      {
+        "target": "avg_precip_mm",
+        "model": "naive_last_value_baseline",
+        "mae": 0.0015,
+        "rmse": 0.0019,
+        "mape": 12.9631
+      }
+    ],
+    "future_7_day_forecast": {
+      "avg_temperature_celsius": [
+        22.57,
+        22.515,
+        22.495,
+        22.41,
+        22.38,
+        22.362,
+        22.327
+      ],
+      "avg_precip_mm": [
+        0.011,
+        0.011,
+        0.012,
+        0.012,
+        0.012,
+        0.012,
+        0.012
+      ]
+    }
+  }
+}
